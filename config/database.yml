@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: teste_olx_development
+test:
+  <<: *default
+  database: teste_olx_test
+
+production:
+  <<: *default
+  database: teste_olx_production
+  username: teste_olx
+  password: <%= ENV['TESTE_OLX_DATABASE_PASSWORD'] %>
